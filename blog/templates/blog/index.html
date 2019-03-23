@@ -327,29 +327,37 @@
             <h3 class="text-secondary text-uppercase mb-0">전국적으로 치킨집과맥도날드는 어떻게 분포하고 있을까요?</h3>
             <img class="img-fluid mb-5" src='{% static "blog/img/post2/post2.png" %}' alt="">
             <p class="mb-5"> 얼마전 흥미로운 이야기를 들었습니다. 우리나라 치킨집이 전세계 맥도날드 매장 수 보다 많다고 합니다. 언론에도 여러번 다뤄졌던 이야기 인데요. 정말 우리나라 치킨집이 세계적으로 가장 유명한 프렌차이즈 맥도날드보다 많을까요?</p>
-              <img class="img-fluid mb-5" src='{% static "blog/img/post1/chicken_news.png" %}' alt="">
-            <p class="mb-5">자세한 기사 내용은 <a href="https://www.yna.co.kr/view/AKR20151003056000009" target="_blank">여기</a>서 확인할 수 있습니다.</p>
-            <img class="img-fluid mb-5" src='{% static "blog/img/post1/McDonald_history.png" %}' alt="">
-            <p class="mb-5">위 내용은 맥도날드 공식 홈페이지에서 발췌했습니다. 2016년 현재 100개가 넘는 나라에서 36,000개 이상의 점포를 운영하고 있다고 합니다. 더 자세하게 알 수 있을까 싶어 찾아본 결과, 독일의 시장조사기관 Statista의 &lt;Number of McDonald's restaurants worldwide&gt;에 따르면 2018년 기준 전세계 맥도날드의 점포 수는 <strong>37,855개</strong>라고 합니다.</p>
             <p class="mb-5">우리나라 치킨집은 얼마나 될까요? 치킨집을 알아보기 앞서 조사과정에 대해 설명드리겠습니다. 저는 먼저 공공데이터 포탈에서 <a href="https://www.data.go.kr/dataset/15012005/fileData.do" target="_blank">소상공인시장진흥공단의 상가업소정보 2018년 자료</a>를 받아 여러가지 파이썬 모듈(pandas, matplotlib 등등)을 사용해 작업했습니다. 결측치와 데이터 전처리 과정을 통해 나온 우리나라 치킨집의 수는 <strong>39,162개</strong>라는 것을 알 수 있었습니다.</p>
-            <iframe src='{% static "blog/img/post1/chicken_anal.html" %}' style="width:100%; height:300px"></iframe>
+            <iframe src='{% static "blog/img/post2/chcken_anal.html" %}' style="width:100%; height:900px"></iframe>
             <p class="mb-5">하지만 39,162개의 점포수는 점포표준산업분류코드가 치킨전문점(I56193)인 수만 고려한 것입니다. 맥도날드에서도 치킨을 팔고 있으며 호프집 대형마트 버거프렌차이즈 닭강정 등등 우리가 치킨을 접할 수 있는 방법을 매우 많습니다. 실제로 우리나라 치킨집 수는 전세계 매장수 1위 약 42,000개의 매장을 가진 프렌차이즈 서브웨이보다 많을 지도 모릅니다.</p>
             <h3 class="text-secondary text-uppercase mb-0">지역별로 살펴볼까요?</h3>
-            <img class="img-fluid mb-5" src='{% static "blog/img/post1/korea_chicken_grap.png" %}' alt="" style="width:50%;height:300px;border:1px solid pink;float:left;">
-            <img class="img-fluid mb-5" src='{% static "blog/img/post1/seoul_chicken_grap.png" %}' alt=""style="width:50%;height:300px;border:1px solid pink;float:right;">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/korea_chicken_grap.png" %}' alt="" style="width:50%;height:300px;border:1px solid pink;float:left;">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/seoul_chicken_grap.png" %}' alt=""style="width:50%;height:300px;border:1px solid pink;float:right;">
             <p class="mb-5">지역적으로 살펴봤을 때 역시나 서울과 경기도에 집중되어 있군요. 서울에 약 4,000개의 치킨집이 있는 것으로 보여 서울구별로 그래프를 그려봤습니다. 강남구에 치킨집이 가장 많은 것으로 나옵니다.</p>
             <h3 class="text-secondary text-uppercase mb-0">지도로 살펴볼까요?</h3>
-            <iframe src='{% static "blog/img/post1/korea_chicken_geo.html" %}' style="width:100%; height:900px"></iframe>
-            <iframe src='{% static "blog/img/post1/seoul_chicken_geo_home.html" %}'  style="width:50%;height:300px;border:1px solid pink;float:left;"></iframe>
-            <iframe src='{% static "blog/img/post1/seoul_chicken_geo.html" %}'  style="width:50%;height:300px;border:1px solid pink;float:left;"></iframe>
+            <iframe src='{% static "blog/img/post2/korea_chicken_geo.html" %}' style="width:100%; height:900px"></iframe>
+            <iframe src='{% static "blog/img/post2/seoul_chicken_geo_home.html" %}'  style="width:50%;height:300px;border:1px solid pink;float:left;"></iframe>
+            <iframe src='{% static "blog/img/post2/seoul_chicken_geo.html" %}'  style="width:50%;height:300px;border:1px solid pink;float:right;"></iframe>
             <h3 class="text-secondary text-uppercase mb-0">맥도날드는 어떨까요?</h3>
             <p class="mb-5">전국 맥도날드주소를 공식 홈페이지에서 파싱하려고 했으나 위도 경도가 없어 치킨집과 같은 방법으로 처리했습니다.</p>
-            <img class="img-fluid mb-5" src='{% static "blog/img/post1/korea_McDonald_grap.png" %}' alt="" style="width:50%;height:300px;border:1px solid pink;float:left;">
-            <img class="img-fluid mb-5" src='{% static "blog/img/post1/seoul_McDonald_grap.png" %}' alt=""style="width:50%;height:300px;border:1px solid pink;float:right;">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/korea_McDonald_grap.png" %}' alt="" style="width:50%;height:300px;border:1px solid pink;float:left;">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/seoul_McDonald_grap.png" %}' alt=""style="width:50%;height:300px;border:1px solid pink;float:right;">
             <p class="mb-5">전국에는 602개의 맥도날드 매장이 있으며 역시나 서울과 경기도에 집중된 모습을 보입니다. 서울에서는 강남구와 서초구에 가장 많아 보입니다.</p>
             <h3 class="text-secondary text-uppercase mb-0">지도로 살펴볼까요?</h3>
-            <iframe src='{% static "blog/img/post1/korea_McDonald_geo.html" %}' style="width:100%; height:900px"></iframe>
-            <iframe src='{% static "blog/img/post1/seoul_McDonald_geo.html" %}' style="width:100%; height:900px"></iframe>
+            <iframe src='{% static "blog/img/post2/korea_McDonald_geo.html" %}' style="width:100%; height:900px"></iframe>
+            <iframe src='{% static "blog/img/post2/seoul_McDonald_geo.html" %}' style="width:100%; height:900px"></iframe>
+            <table width=100% border="1" cellspacing="0" cellpadding="0" >
+              <tr>
+                <th>제목1</th>
+                <th>제목2</th>
+                <th>제목3</th>
+              </tr>
+              <tr>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+              </tr>
+            </table>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
               close</a>
@@ -371,7 +379,9 @@
             <h2 class="text-secondary text-uppercase mb-0">coming soon</h2>
             <hr class="star-dark mb-5">
             <img class="img-fluid mb-5" src='{% static "blog/img/comingsoon.png" %}' alt="">
-            <p class="mb-5">coming soon.</p>
+            <p class="mb-5">stopwords_kr = ['팔로우', '맞팔', '선팔', '선팔 맞팔', '선팔하면맞팔'
+                '좋아요', '좋아요반사',
+                '소통', '일상', '일상 소통','데일리', 'daily'].우리나라 농업 진흥과 발전을 위해 농협직원분들 불철주야 열심히 일하고 계십니다!</p>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
               close</a>
