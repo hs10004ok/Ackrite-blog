@@ -1,22 +1,575 @@
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
-        </div>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
+<head>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>흥미로그</title>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KNPQTQW');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "blog/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href='{% static "blog/vendor/fontawesome-free/css/all.min.css" %}' rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Plugin CSS -->
+  <link href='{% static "blog/vendor/magnific-popup/magnific-popup.css" %}' rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "blog/css/freelancer.min.css" %}' rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNPQTQW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">궁금봇의 흥미로그</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Post</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container">
+      <img class="img-fluid mb-5 d-block mx-auto" src='{% static "blog/img/main.png" %}' alt="">
+      <h1 class="text-uppercase mb-0">흥미로그</h1>
+      <hr class="star-light">
+      <h2 class="font-weight-light mb-0">안녕하세요. 궁금봇입니다.</br>흥미로그에 오신 것을 환영합니다.</h2>
+    </div>
+  </header>
+
+  <!-- Portfolio Grid Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">Post</h2>
+      <hr class="star-dark mb-5">
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src='{% static "blog/img/post1/post1.png" %}' alt="">
+          </a>
         </div>
-    </body>
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src='{% static "blog/img//post2/post2.png" %}' alt="">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src='{% static "blog/img/post3/post3.png" %}' alt="">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-4">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src='{% static "blog/img/comingsoon.png" %}' alt="">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-5">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src='{% static "blog/img/comingsoon.png" %}' alt="">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-6">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src='{% static "blog/img/comingsoon.png" %}' alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="bg-primary text-white mb-0" id="about">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-white">About</h2>
+      <hr class="star-light mb-5">
+      <div class="row">
+        <div class="col-lg-4 ml-auto">
+          <!--<p class="lead">수포자로 인문계 고등학교를 졸업하고 사회과학을 전공했습니다. 사회과학을 전공하면서 항상 과학적 요소를 사용하지 않는 연구방법에 아쉬움이 있었습니다. 학사과정 막바지에 통계조사에 관심이 생겨 공부를 시작했습니다.</p>
+        </div>
+        <div class="col-lg-4 mr-auto">
+          <p class="lead">공부할수록 객관적인 결과로 타인을 설득할 수 있는 통계조사에 매력을 느꼈습니다. "굳이 이렇게? 정성스러운 뻘짓을? 이게 무슨 의미가 있을까?"하는 것들을 가볍고 쉽게 분석해 보려고 합니다.</p>
+        </div>-->
+      </div>
+      <!--<div class="text-center mt-4">
+        <a class="btn btn-xl btn-outline-light" href="#">
+          <i class="fas fa-download mr-2"></i>
+          Download Now!
+        </a>
+      </div>-->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+      <hr class="star-dark mb-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <!--<img class="img-fluid mb-5" src='{% static "blog/img/email.png" %}' alt="">-->
+          <a class="text-center text-uppercase text-secondary mb-0" href="1.html">Contact Me</a>
+          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+          <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+          <!--<form name="sentMessage" id="contactForm" novalidate="novalidate">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Name</label>
+                <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Email Address</label>
+                <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Phone Number</label>
+                <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Message</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Send</button>
+            </div>
+          </form>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+    <!-- <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Location</h4>
+          <p class="lead mb-0">2215 John Daniel Drive
+            <br>Clark, MO 65243</p>
+        </div>
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Around the Web</h4>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                <i class="fab fa-fw fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                <i class="fab fa-fw fa-google-plus-g"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                <i class="fab fa-fw fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                <i class="fab fa-fw fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                <i class="fab fa-fw fa-dribbble"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-uppercase mb-4">About Freelancer</h4>
+          <p class="lead mb-0">Freelance is a free to use, open source Bootstrap theme created by
+            <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+        </div>
+      </div>
+    </div>
+  </footer>-->
+
+  <div class="copyright py-4 text-center text-white">
+    <div class="container">
+      <small>Copyright &copy; Ackrite 2019</small>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+
+  <!-- Portfolio Modals -->
+
+  <!-- Portfolio Modal 1 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">맥도날드보다</br>치킨집이 많다고?</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post1/post1.png" %}' alt="">
+            <h3 class="text-secondary text-uppercase mb-5">정말 맥도날드보다 치킨집이 많다고?</h3>
+            <p class="mb-5">기사의 내용처럼 전 세계 맥도날드 매장 수보다 한국의 치킨전문점이 많다는 게 사실일까요? 네, 맞습니다. 사실입니다. 제가 직접 찾아봤습니다. 어떻게 찾아봤을까요? 분석 과정과 결과를 간단하게 살펴보겠습니다. 먼저 맥도날드의 전 세계 매장 수부터 알아볼까요?</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post1/post1뉴스.png" %}' alt="">
+            <p class="mb-5">자세한 기사 내용은 <a href="https://www.yna.co.kr/view/AKR20151003056000009" target="_blank">여기</a>서 확인할 수 있습니다.</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post1/맥도날드.png" %}' alt="">
+            <p class="mb-5">위 내용은 맥도날드 공식 홈페이지에서 발췌했습니다. 2016년 현재 100개가 넘는 나라에서 36,000개 이상의 점포를 운영하고 있다고 합니다. 더 자세하게 알 수 있을까 싶어 찾아봤습니다. 독일의 시장조사기관 Statista의 &lt;Number of McDonald's restaurants worldwide&gt;에 따르면 2018년 기준 전 세계 맥도날드의 점포 수는 <strong>37,855개</strong>라고 합니다.</p>
+            <p class="mb-5">우리나라 치킨전문점은 얼마나 될까요? 치킨전문점 수를 알아보에 앞서 과정에 대해 설명하겠습니다. 저는 먼저 공공데이터 포탈에서 <a href="https://www.data.go.kr/dataset/15012005/fileData.do" target="_blank">2018 소상공인시장진흥공단의 상가업소정보</a>를 받아 여러 가지 파이썬 모듈(pandas, matplotlib 등등)을 사용해 작업했습니다. 우리나라에 치킨전문점은 몇 개나 있을까요? 무려 <strong>39,162개</strong>나 있습니다.</p>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post1/치킨.html" %}' style="width:100%; height:300px"></iframe>
+            <p class="mb-5">하지만 39,162개의 점포 수는 점포표준산업분류 코드가 치킨전문점(I56193)인 수만 고려한 것입니다. 맥도날드에서도 치킨을 팔고 있으며 호프집, 대형 마트, 닭강정 등등 우리가 치킨을 접할 수 있는 방법은 매우 많습니다. 실제로 우리나라 치킨전문점 수는 전 세계 매장 수 1위 약 42,000개의 매장을 가진 프렌차이즈 서브웨이보다 많을지도 모릅니다.</p>
+            <h3 class="text-secondary text-uppercase mb-5">그럼 치킨집보다 많은 건?</h3>
+            <p class="mb-5">대한민국은 치킨공화국이다. 버뮤닭 삼각지대 등등 치킨에 관련된 단어들이 많아졌는데요. 그렇다면 치킨전문점보다 많은 것은 어떤 것들이 있을까요? 저는 주위에 자주 보이는 점포들을 몇가지(부동산, 카페, 편의점, 휴대폰 판매점)를 선택해 비교해겠습니다.</p>
+            <p class="mb-5">먼저 부동산입니다. 제가 살펴본 부동산은 공인중개업소입니다. 전국에 부동산은 얼마나 있을까요?. <strong>68,698개</strong>나 있습니다. 이는 부동산중개업만 고려한 수입니다.</p>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post1/부동산.html" %}' style="width:100%; height:300px"></iframe>
+            <p class="mb-5">카페는 얼마나 있을까요? 전국에 카페는 무려 <strong>85,535개</strong>나 있었습니다. 이 또한 생과일주스전문점, 전통찻집, 사주카페, 애견카페, 보드게임카페를 제외한 숫자입니다. 우리나라 국민들은 카페인 중독일까요?</p>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post1/카페.html" %}' style="width:100%; height:300px"></iframe>
+            <p class="mb-5">편의점은 얼마나 있을까요? 우리나라의 편의점은 <strong>48,358개</strong>가 있습니다. 치킨전문점보다는 많은 숫자네요.</p>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post1/편의점.html" %}' style="width:100%; height:300px"></iframe>
+            <p class="mb-5">휴대폰 판매점은 얼마나 있을까요? <strong>20,661개</strong>입니다. 카페가 너무 강력해 상대적으로 적어 보입니다.</p>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post1/phone.html" %}' style="width:100%; height:300px"></iframe>
+            <p class="mb-5">맥도날드와 치킨전문점을 비교하려다 너무 멀리 와버린거 같습니다. 그래프로 확인해보려던 참 한가지 생각났습니다. 세계적인 건축가 '아론 탄'이라는 분이 한국에 와서 놀란게 있다고 합니다. 바로 야경인데요. 야경에 왜 놀랐을까요? <strong>여수엑스포에 참가하기 위해 한국을 방문한 아론 탄은 “하늘에서 보는 야경은 수많은 십자가 때문에 공동묘지 같다”며 탄식했다</strong>고 합니다.</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post1/교회.png" %}' alt="">
+            <p class="mb-5">그렇다면 전국에 교회는 얼마나 있을까요? 제가 참고한 자료는 상권분석 자료에는 종교법인에 대한 자료가 없었습니다. 상가업소정보이기 때문일까요? 때문에 <a href="http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1K52C02&vw_cd=MT_ZTITLE&list_id=K22_4&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE" target="_blank">다른 자료(2006~2017)</a>를 참고한 결과, 우리나라의 기독교 단체는 <strong>55,104개</strong>가 있네요.</p>
+            <h3 class="text-secondary text-uppercase mb-5">보기 편하게 그래프로 살펴볼까요?</h3>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post1/그래프.png" %}' alt="">
+            <p class="mb-5"><strong>카페>부동산>기독교단체>편의점>치킨>맥도날드>휴대폰판매점</strong>입니다. 사실 음식점, 미용업소, 학원, 주점, 종합소매점, 노래방 등등 비교할 것들이 많았습니다. 하지만 직접 분류해본 입장에서 세분화하기 힘든 부분이 있었습니다. 생각보다 우리나라에 치킨집이 많아서 놀랐습니다. 여러분들 어떻게 생각하시나요?</p>
+            <h3 class="text-secondary text-uppercase mb-5">결론</h3>
+            <p class="mb-5"><strong>치킨과 빅맥이 먹고 싶군요.</strong></p>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 2 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-2">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">우리나라의 치킨집과 맥도날드!</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/post2.png" %}' alt="">
+            <h3 class="text-secondary text-uppercase mb-5">우리나라의 치킨집과</br>맥도날드는 어떻게?</h3>
+            <p class="mb-5">저번 시간과 이어 치킨과 맥도날드에 관해 이야기해보려 합니다. 아래 기사는 가장 오래된 식당에 대한 기사입니다. 여기서 눈여겨 볼만한 내용은 우리나라에서 가장 상표가 바로 '맥도날드'라는 것입니다.</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/post2뉴스.png" %}' alt="">
+            <p class="mb-5">자세한 기사 내용은 <a href="https://www.yna.co.kr/view/AKR20190323024400063?section=search" target="_blank">여기</a>서 확인할 수 있습니다.</p>
+            <p class="mb-5">맥도날드는 우리나라에서 현존하는 가장 오래된 식당 상표입니다. 기사에서는 1969년 2월에 상표를 등록했다고 나오지만, 맥도날드 1호점이 개점 시기는 1988년입니다. 1986년 (주)맥안산업으로 시작해 88올림픽이 열리기 직전에 압구정 로데오에 1호점을 개점했습니다.</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/McDonald1.jpg" %}' alt="" style="width:50%;height:300px;border:1px solid pink;float:left;">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/McDonald2.jpeg" %}' alt="" style="width:50%;height:300px;border:1px solid pink;float:right;">
+            <p class="mb-5">그렇다면 치킨은 어떨까요? 치킨은 국내 패스트푸트 3대장 중 하나로 피자, 버거, 치킨 중 압도적으로 1등의 자리에 있습니다. 이는 한국의 배달 문화와 맞물려 엄청난 접근성을 자랑하고 시대가 변하고 세월이 지나가면서 다양한 맛의 변화와 한국의 배달 문화가 맞물려 뛰어난 접근성으로 김치, 불고기, 비빔밥과 같이 한국을 대표하는 음식으로 주목받고 있습니다.</p>
+            <p class="mb-5">치킨의 역사는 어떻게 될까요? 우리나라 치킨 역사의 시작은 명동에 '영양센타' 오픈하면서 시작됩니다. 당시 빙글빙글 전기구이통닭이 등장했습니다. 이는 70년대 중후반 전기구이 통닭 열풍이 사그라들 때까지 이어집니다. 1960년대 말, 경제 개발 5개년 계획으로 국민 소득이 늘어나고 양계업계 생산량 증가로 닭요리를 쉽게 접할 수 있게 되었습니다.</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/centa1.jpg" %}' alt="" style="width:50%;height:300px;border:1px solid pink;float:left;">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/centa2.jpg" %}' alt="" style="width:50%;height:300px;border:1px solid pink;float:right;">
+            <p class="mb-5">또한 1971년 H社의 식용유가 국내 최초 출시되면서 달과 기름의 양산화가 모두 갖춰져 본격적인 프라이드치킨의 시대가 도래했습니다. 최초의 프라이드 치킨집인 림스치킨이 신세계 백화점에 들어섰고 1979년에 롯데리아에서 조각치킨을 판매하기 시작했으며, 1980년대부터 중소규모의 프라이드 치킨집들이 생겨났습니다.</p>
+            <p class="mb-5">이후 1985년대에 양념통닭이 생겨나고 다양한 프렌차이즈와 광고로 점점 성장합니다. 2002년에는 월드컵과 맞물려 맥주화 함께 '월드컵 특수'를 보여주기도 합니다. 이후에 간장치킨, 파치킨, 오븐치킨, 두마리 치킨, 다양한 시즈닝치킨 등등 우리나라를 치킨의 나라로 만들어버립니다.</p>
+            <h3 class="text-secondary text-uppercase mb-5">치느님의 대한민국 지배!</h3>
+            <p class="mb-5">현재 대한민국에는 하느님을 제외한 3명의 '느님'이 계신다고 합니다. '유느님', '연느님' 그리고 바로 '치느님'입니다. 치느님은 우리나라를 어느정도 '지배'하고 있을까요? 한번 알아보기로 했습니다.</p>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post2/치킨 전처리.html" %}' style="width:100%; height:300px"></iframe>
+            <p class="mb-5">위의 과정을 통해 데이터를 추려 전국과 지역별 치킨전문점위 위도와 경도를 파악했습니다. 치킨전문점과 맥도날드는 지역적으로 어떻게 분포하고 있으며 나아가 유동인구와 상관관계를 살펴보겠습니다.</p>
+            <h3 class="text-secondary text-uppercase mb-5">지역별로 살펴볼까요?</h3>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/korea_chicken_grap.png" %}' alt="" style="width:50%;height:300px;border:1px solid pink;float:left;">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/seoul_chicken_grap.png" %}' alt=""style="width:50%;height:300px;border:1px solid pink;float:right;">
+            <p class="mb-5">지역적으로 살펴봤을 때 역시나 서울과 경기도에 집중되어 있군요. 경기도에 가장 많은 치킨전문점이 있으며, 서울에 약 4,000개의 치킨전문점이 있는 것으로 보여집니다. 서울은 어떨까요? 서울 구별로 그래프로 확인해 보면 강남구, 관악구, 노원구 순으로 많이 있습니다.</p>
+            <h3 class="text-secondary text-uppercase mb-5">지도로 살펴볼까요?</h3>
+            <h5 class="text-secondary text-uppercase mb-3">전국 치킨전문점 분포</h6>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post2/korea_chicken_geo.html" %}' style="width:100%; height:500px"></iframe>
+            <h5 class="text-secondary text-uppercase mb-3">서울 치킨전문점 분포</h6>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post2/seoul_chicken_geo_home.html" %}'  style="width:50%;height:300px;border:1px solid pink;float:left;"></iframe>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post2/seoul_chicken_geo.html" %}'  style="width:50%;height:300px;border:1px solid pink;float:right;"></iframe>
+            <h3 class="text-secondary text-uppercase mb-5">맥도날드는 어떨까요?</h3>
+            <p class="mb-5">처음에는 공식 홈페이지에서 각 점포의 주소를 하나하나 파싱하려고 했습니다. 하지만 홈페이지에 나온 주소들로 위경도를 파악할 수 없어 치킨전문점과 같은 방법으로 처리했습니다.</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/korea_McDonald_grap.png" %}' alt="" style="width:50%;height:300px;border:1px solid pink;float:left;">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/seoul_McDonald_grap.png" %}' alt=""style="width:50%;height:300px;border:1px solid pink;float:right;">
+            <p class="mb-5">전국에는 602개의 맥도날드 매장이 있으며 역시나 서울과 경기도에 집중된 모습을 보입니다. 서울에서는 강남구와 서초구에 가장 많아 보입니다. 맥도날드와는 약간 다르게 보이네요.</p>
+            <h3 class="text-secondary text-uppercase mb-5">지도로 살펴볼까요?</h3>
+            <h5 class="text-secondary text-uppercase mb-3">전국 맥도날드 분포</h6>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post2/korea_McDonald_geo.html" %}' style="width:100%; height:500px"></iframe>
+            <h5 class="text-secondary text-uppercase mb-3">서울 맥도날드 분포</h6>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post2/seoul_McDonald_geo_home.html" %}'  style="width:50%;height:300px;border:1px solid pink;float:left;"></iframe>
+            <iframe class="img-fluid mb-5" src='{% static "blog/img/post2/seoul_McDonald_geo.html" %}'  style="width:50%;height:300px;border:1px solid pink;float:right;"></iframe>
+            <h3 class="text-secondary text-uppercase mb-5">유동인구와 관계가 있을까?</h3>
+            <p class="mb-5">저는 일단 <a href="http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-14991&srvType=S&serviceKind=1&currentPageNo=1" target="_blank">서울시 유동인구 데이터(2018년 3월~2018년 12월)</a>를 받아 서울 구별 평균 유동인구를 파악했습니다. 서울 구별 유동인구와 치킨전문점, 맥도날드를 상관관계 분석을 해보려고 합니다. 분석하기에 앞서 상관관계 분석은 무엇일까요?</p>
+            <h6 class="text-secondary text-uppercase mb-5">상관관계 분석?</h6>
+            <p class="mb-5">상관분석(Correlation Analysis)은 확률론과 통계학에서 두 변수 간에 어떤 선형적 관계를 가졌는지를 분석하는 방법입니다. 두 변수는 서로 독립적인 관계로부터 서로 상관된 관계일 수 있으며 이때 두 변수 간의 관계의 강도를 상관관계(Correlation, Correlation coefficient)라 합니다. 상관분석에서는 상관관계의 정도를 나타내는 단위로 모상관계수 ρ를 사용합니다.</p>
+            <p class="mb-5">쉽게 설명해서 <strong>두 변수가 비슷한 양상을 보이는지 확인하는 방법</strong>입니다. 연관된 정도를 나타낼 뿐 인과관계를 설명하지는 않습니다. 두 변수 간에 인과관계를 확인하는 것은 회귀분석을 통해 인과관계의 방향, 정도와 수학적 모델을 확인해 볼 수 있습니다.</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post2/corr.png" %}' alt=""style="width:100%;height:300px;border:1px solid pink;">
+            <h6 class="text-secondary text-uppercase mb-5">피어슨 상관 계수?</h6>
+            <p class="mb-5">많은 수의 상관 계수가 있습니다. 하지만 가장 보편적으로 되는 것이 피어슨의 상관 계수(Pearson correlation coefficient)입니다. 상관관계 분석에서는 기본적으로 피어슨 상관 계수는 두 변수간의 관련성을 구하기 위해 보편적으로 이용됩니다.</p>
+            <p class="mb-5"><strong>r = x 와 y 가 함께 변하는 정도 / x 와 y 가 각각 변하는 정도</strong></p>
+            <p class="mb-5">r 값은 x 와 y 가 완전히 동일하면 +1, 전혀 다르면 0, 반대방향으로 완전히 동일하면 -1 의 값을 갖습니다. 쉽게 설명하면 <strong>1 혹은 -1과 가까울수록 비슷한 양상을 보인다</strong>고 생각하시면 됩니다.</p>
+            <table class="img-fluid mb-5" width=100% border="1" cellspacing="0" cellpadding="0" >
+              <tr>
+                <th></th>
+                <th>치킨전문점</th>
+                <th>맥도날드</th>
+                <th>평균유동인수</th>
+              </tr>
+              <tr>
+                <td>치킨전문점</td>
+                <td>1.0000</td>
+                <td>0.4191</td>
+                <td>0.6455</td>
+              </tr>
+              <tr>
+                <td>맥도날드</td>
+                <td>0.4191</td>
+                <td>1.0000</td>
+                <td>0.3796</td>
+              </tr>
+              <tr>
+                <td>평균유동인구</td>
+                <td>0.6455</td>
+                <td>0.3796</td>
+                <td>1.0000</td>
+              </tr>
+            </table>
+            <p class="mb-5">서울 구별 유동인구와 치킨전문점, 맥도날드를 상관관계 분석하면 위와 같은 결과를 확인할 수 있습니다. 깔끔하게 표를 다시 그려보았습니다. 뚜렷한 상관관계를 확인할 수는 없지만 그나마 맥도날드와 평균유동인구가 양의 상관관계를 보이네요.</p>
+            <p class="mb-5">여담이지만 <strong>맥</strong>시칸치킨, <strong>멕</strong>시칸치킨, 멕시카나는 서로 다른 브랜드라고 하네요. <strong>맥</strong>시칸은 개성통닭으로 시작해 (주)맥시칸이 되었다고 합니다. 반면 <strong>멕</strong>시칸치킨은 멕시칸물산에서 현재 계림푸드원이며 멕시카나치킨은 (주)멕시카나라고 합니다. 치킨이 멕시코사람(mexican)과 무슨 관련이 있는지 궁금한 부분입니다.</p>
+            <h3 class="text-secondary text-uppercase mb-5">결론</h3>
+            <p class="mb-5"><strong>치킨과 빅맥이 먹고 싶군요.</strong></p>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 3 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">치킨집과 맥도날드!</br>SNS에서는?</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src='{% static "blog/img/post3/post3.png" %}' alt="">
+            <h3 class="text-secondary text-uppercase mb-5">우리나라 사람들은 닭고기를 얼마나 먹을까?</h3>
+            <p class="mb-5">이번도 당연히 치킨과 맥도날드에 대해 알아보려고 합니다. 치킨의 나라 국민들은 치킨을 얼마나 먹을까요? 왠지 당연히 1등 할 것만 같은 기분이 드는데요. 최근 10년 사이 약 2배까지 성장해 2016년 기준 국민 1인당 닭고기 소비량이 약 17kg(1년에 약 14마리)이라고 합니다.</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post3/post3뉴스.png" %}' alt="">
+            <p class="mb-5">자세한 기사 내용은 <a href="http://www.chuksannews.co.kr/news/article.html?no=113455#092i" target="_blank">여기</a>서 확인할 수 있습니다.</p>
+            <p class="mb-5">하지만 소비량 상위 10개 국가 평균인 53kg을 밑돈다고 하네요. 한국 육계협회에 따르면 2016년 기준 국가별 1인당 닭고기 소비량 1위는 아랍에미리트이며 닭고기 최대 생산국은 미국으로 세계 닭고기 생산의 20%를 차지한다고 합니다. 여러분들 분발하셔야겠네요.</p>
+            <h3 class="text-secondary text-uppercase mb-5">사람들은 어떻게 생각하고 있을까?</h3>
+            <p class="mb-5">사실 제가 알아보려고 하는 것은 닭고기 소비량이 아닙니다. 우리나라 사람들은 치킨과 맥도날드에 대해 어떻게 생각하고 있는지 알아보려고 합니다. SNS를 통해 치킨과 맥도날드를 어떻게 생각하고 있는지 찾아보기로 했습니다.</p>
+            <p class="mb-5">인스타그램에서 특정 키워드에 대한 반응을 살펴보기 위해서 어떤 과정이 필요할까요? 크롤링이라는 작업이 필요합니다. 크롤링 혹은 스크래핑은 웹페이지를 그대로 가져와 데이터를 추출하는 행위입니다.</p>
+            <h6 class="text-secondary text-uppercase mb-3">크롤링 과정</h6>
+            <p class="mb-5">
+              <strong>
+              1. 웹 드라이버를 이용해 원하는 페이지에 접속한다.</br>
+              2. 필요한 데이터를 찾아 선택한다.</br>
+              3. 데이터를 원하는 형태로 저장한다.</br>
+              4. 2, 3 과정을 원하는 만큼 반복한다.</br>
+              </strong>
+            </p>
+            <p class="mb-5">저는 파이썬 모듈 Selenium, BeautifulSoup을 사용했습니다. 원하는 테그를 검색해 최근 500개의 포스트와 댓글, 날짜, 좋아요, 태크를 데이터프레임 형태로 저장해 워드클라우드로 표현해봤습니다. 제 코딩실력이 형편없고 웹 수집이라는 작업이 문제를 일으킬수 있기 때문에 소스는 공개하지 않겠습니다.</p>
+            <h6 class="text-secondary text-uppercase mb-3">불용어 리스트</h6>
+            <p class="mb-5">['팔로우', '맞팔', '선팔', '선팔 맞팔', '선팔하면맞팔', '좋아요', '좋아요반사', '소통', '일상', '일상 소통','데일리', 'daily']</p>
+            <h3 class="text-secondary text-uppercase mb-5">인스타그램 #치킨 워드클라우드</h3>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post3/insta_chicken1.png" %}' alt="" style="width:100%;height:300px;border:1px solid pink;">
+            <p class="mb-5">이게 무슨일일까요? 농협에서 치킨사업을 시작했을까요? 그게 아니고 당일 3월 22일 금요일에 농협에서 이벤트를 진행했던거 같습니다.</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post3/NHevent.jpg" %}' alt="" style="width:300px;height:300px;border:1px solid pink;">
+            <p class="mb-5">우리나라 농업 진흥과 발전을 위해 불철주야 열심히 일하고 계십니다! 단어만 보겠습니다!</p>
+            <h3 class="text-secondary text-uppercase mb-5">인스타그램 #치킨 워드클라우드</h3>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post3/insta_chicken2.png" %}' alt="" style="width:100%;height:300px;border:1px solid pink;">
+            <p class="mb-5">치맥과 아들이라는 단어가 가장 잘 보입니다. 금요일이라 아들과 함께 치킨을 먹겠다는 가장의 따뜻한 마음을 느낄 수 있는 부분입니다.</p>
+            <h3 class="text-secondary text-uppercase mb-5">인스타그램 #맥도날드 워드클라우드</h3>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post3/insta_mcdonald1.png" %}' alt="" style="width:100%;height:300px;border:1px solid pink;">
+            <p class="mb-5">이상하게 맥모닝, 맥머핀이 잘보이네요? 알아보니 맥모닝 이벤트를 했군요. '내셔널 브렉퍼스트 데이' 전국 아침식사의 날인가 봅니다.</p>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post3/Mcevent.jpg" %}' alt="" style="width:300px;height:400px;border:1px solid pink;">
+            <p class="mb-5">다국적 거대기업의 이벤트를 확인할 수 있습니다! 단어만 보겠습니다!</p>
+            <h3 class="text-secondary text-uppercase mb-5">인스타그램 #맥도날드 워드클라우드</h3>
+            <img class="img-fluid mb-5" src='{% static "blog/img/post3/insta_mcdonald2.png" %}' alt="" style="width:100%;height:300px;border:1px solid pink;">
+            <p class="mb-5">이벤트 덕분인지 공짜로 에그 맥머핀을 드신분이 많은가 봅니다. 특이하게 라떼와 라면이 보이네요. 이벤트와 금요일의 영향이 좀 있긴 하지만 치킨과 맥도날드를 태그하시는 분들의 포스트를 살펴보고 어떤 단어를 많이 사용하는 지 확인할 수 있었습니다.</p>
+            <h3 class="text-secondary text-uppercase mb-5">결론</h3>
+            <p class="mb-5"><strong>치킨과 에그 맥머핀이 먹고 싶군요.</strong></p>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 4 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">coming soon</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src='{% static "blog/img/comingsoon.png" %}' alt="">
+            <p class="mb-5">coming soon.</p>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 5 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">coming soon</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src='{% static "blog/img/comingsoon.png" %}' alt="">
+            <p class="mb-5">coming soon.</p>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 6 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">coming soon</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src='{% static "blog/img/comingsoon.png" %}' alt="">
+            <p class="mb-5">coming soon.</p>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "blog/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "blog/vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+
+  <!-- Plugin JavaScript -->
+  <script src='{% static "blog/vendor/jquery-easing/jquery.easing.min.js" %}'></script>
+  <script src='{% static "blog/vendor/magnific-popup/jquery.magnific-popup.min.js" %}'></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src='{% static "blog/js/jqBootstrapValidation.js" %}'></script>
+  <script src='{% static "blog/js/contact_me.js" %}'></script>
+
+  <!-- Custom scripts for this template -->
+  <script src='{% static "blog/js/freelancer.min.js" %}'></script>
+
+</body>
+
 </html>
